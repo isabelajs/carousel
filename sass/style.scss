@@ -1,0 +1,19 @@
+@import "./header.scss";
+@import "./main.scss";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+.contenedor{
+    background-color: #AB88FF;
+    height: 100vh;
+    color: white;
+    font-family: 'Muli', sans-serif;
+}

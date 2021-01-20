@@ -1,8 +1,8 @@
-
-
-
+//obtiene le contenedor del carrusel
 let carousel_contenedor = document.getElementsByClassName("carousel__container")[0];
-let carousel = carousel_contenedor.parentNode;
+//obtiene el padre del contenedor carrusel
+let categoria = carousel_contenedor.parentNode;
+//obtiene el ultimo elemento del carrusel
 let lastItem= carousel_contenedor.lastChild.previousSibling;
 
 lastItem.addEventListener("mouseover", desplazar)

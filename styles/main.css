@@ -1,6 +1,3 @@
-.main {
-  margin: 0px 20px;
-}
 .main__search {
   height: 300px;
   display: flex;
@@ -25,31 +22,36 @@
 .main__search ::placeholder {
   color: white;
 }
-.main__carousel {
+.main__category {
+  margin: 0 15px;
+}
+.main__category .categoria {
   overflow-x: scroll;
   padding: 70px 0px;
   position: relative;
   scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
 }
-.main__carousel .carousel__container {
-  padding-bottom: 10px;
+.main__category .categoria__title {
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+.main__category .categoria .carousel__container {
   display: flex;
 }
-.main__carousel .carousel__container:hover .carousel-item {
+.main__category .categoria .carousel__container:hover .carousel-item {
   opacity: 0.3;
 }
-.main__carousel .carousel__container:hover .carousel-item:hover {
+.main__category .categoria .carousel__container:hover .carousel-item:hover {
   opacity: 1;
   transform: scale(1.5);
 }
-.main .moveLeft {
-  transform: translateX(-100px);
-}
-.main .carousel-item {
+.main__category .categoria .carousel__container .carousel-item {
   min-width: 200px;
   height: 250px;
   border-radius: 20px;
-  background: url(https://www.fundacion-affinity.org/sites/default/files/el-gato-necesita-tener-acceso-al-exterior.jpg) center/cover no-repeat;
+  background: peru;
   margin-right: 10px;
   cursor: pointer;
   transition: 450ms all;
@@ -57,35 +59,75 @@
   overflow: hidden;
   position: relative;
 }
-.main .carousel-item:last-child {
+.main__category .categoria .carousel__container .carousel-item:last-child {
   transform-origin: center right;
 }
-.main .carousel-item:hover .carousel-item__details {
+.main__category .categoria .carousel__container .carousel-item:hover .carousel-item__details {
   opacity: 1;
 }
-.main .carousel-item:hover ~ .carousel-item {
+.main__category .categoria .carousel__container .carousel-item:hover ~ .carousel-item {
   transform: translateX(100px);
   opacity: 0.3;
 }
-.main .carousel-item__details {
-  position: absolute;
+.main__category .categoria .carousel__container .carousel-item__img {
+  object-fit: cover;
+  width: 200px;
+  height: 250px;
+}
+.main__category .categoria .carousel__container .carousel-item__details {
   bottom: 0;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  justify-content: flex-end;
+  position: absolute;
+  inset: 0 0 0 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+  padding: 10px 10px;
   opacity: 0;
   transition: 450ms opacity;
 }
-.main .carousel-item__details .icons img {
-  width: 30px;
-  height: 30px;
+.main__category .categoria .carousel__container .carousel-item__details .icons {
+  display: flex;
 }
-.main .carousel-item__details .title {
+.main__category .categoria .carousel__container .carousel-item__details .icons__icon {
+  width: 20px;
+  height: 20px;
+}
+.main__category .categoria .carousel__container .carousel-item__details .icons__icon--play {
+  background: url("../assets/play-icon.png") center/cover no-repeat;
+  margin-right: 5px;
+}
+.main__category .categoria .carousel__container .carousel-item__details .icons__icon--plus {
+  background: url("../assets/plus-icon.png") center/cover no-repeat;
+}
+.main__category .categoria .carousel__container .carousel-item__details .title {
   font-size: 1.6rem;
-  padding-bottom: 2px;
+  margin: 3px 0;
 }
-.main .carousel-item__details .subtitle {
+.main__category .categoria .carousel__container .carousel-item__details .subtitle {
   font-size: 1rem;
+}
+.main__category .categoria__buttons {
+  display: flex;
+}
+.main__category .categoria__buttons .categoria__button {
+  position: absolute;
+  bottom: 70px;
+  width: 50px;
+  height: 250px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: url(../assets/play-icon.png) center/contain no-repeat;
+}
+.main__category .categoria__buttons .categoria__button-left {
+  transform: scaleX(-1);
+}
+.main__category .categoria__buttons .categoria__button-right {
+  right: 0;
+}
+.main .moveLeft {
+  transform: translateX(-100px);
 }
 
 /*# sourceMappingURL=main.css.map */

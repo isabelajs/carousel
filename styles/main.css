@@ -24,34 +24,33 @@
 }
 .main__category {
   margin: 0 15px;
+  position: relative;
 }
-.main__category .categoria {
+.main__category .categoria__title {
+  font-size: 2rem;
+}
+.main__category .categoria__carousel {
   overflow-x: scroll;
-  padding: 70px 0px;
+  padding: 50px 0px;
   position: relative;
   scroll-behavior: smooth;
   display: flex;
   flex-direction: column;
 }
-.main__category .categoria__title {
-  margin-bottom: 30px;
-  font-size: 2rem;
-}
-.main__category .categoria .carousel__container {
+.main__category .categoria__carousel .carousel__container {
   display: flex;
 }
-.main__category .categoria .carousel__container:hover .carousel-item {
+.main__category .categoria__carousel .carousel__container:hover .carousel-item {
   opacity: 0.3;
 }
-.main__category .categoria .carousel__container:hover .carousel-item:hover {
+.main__category .categoria__carousel .carousel__container:hover .carousel-item:hover {
   opacity: 1;
-  transform: scale(1.5);
+  transform: scale(1.3);
 }
-.main__category .categoria .carousel__container .carousel-item {
+.main__category .categoria__carousel .carousel__container .carousel-item {
   min-width: 200px;
   height: 250px;
   border-radius: 20px;
-  background: peru;
   margin-right: 10px;
   cursor: pointer;
   transition: 450ms all;
@@ -59,22 +58,22 @@
   overflow: hidden;
   position: relative;
 }
-.main__category .categoria .carousel__container .carousel-item:last-child {
+.main__category .categoria__carousel .carousel__container .carousel-item:last-child {
   transform-origin: center right;
 }
-.main__category .categoria .carousel__container .carousel-item:hover .carousel-item__details {
+.main__category .categoria__carousel .carousel__container .carousel-item:hover .carousel-item__details {
   opacity: 1;
 }
-.main__category .categoria .carousel__container .carousel-item:hover ~ .carousel-item {
-  transform: translateX(100px);
+.main__category .categoria__carousel .carousel__container .carousel-item:hover ~ .carousel-item {
+  transform: translateX(60px);
   opacity: 0.3;
 }
-.main__category .categoria .carousel__container .carousel-item__img {
+.main__category .categoria__carousel .carousel__container .carousel-item__img {
   object-fit: cover;
   width: 200px;
   height: 250px;
 }
-.main__category .categoria .carousel__container .carousel-item__details {
+.main__category .categoria__carousel .carousel__container .carousel-item__details {
   bottom: 0;
   display: flex;
   flex-direction: column;
@@ -86,25 +85,25 @@
   opacity: 0;
   transition: 450ms opacity;
 }
-.main__category .categoria .carousel__container .carousel-item__details .icons {
+.main__category .categoria__carousel .carousel__container .carousel-item__details .icons {
   display: flex;
 }
-.main__category .categoria .carousel__container .carousel-item__details .icons__icon {
+.main__category .categoria__carousel .carousel__container .carousel-item__details .icons__icon {
   width: 20px;
   height: 20px;
 }
-.main__category .categoria .carousel__container .carousel-item__details .icons__icon--play {
+.main__category .categoria__carousel .carousel__container .carousel-item__details .icons__icon--play {
   background: url("../assets/play-icon.png") center/cover no-repeat;
   margin-right: 5px;
 }
-.main__category .categoria .carousel__container .carousel-item__details .icons__icon--plus {
+.main__category .categoria__carousel .carousel__container .carousel-item__details .icons__icon--plus {
   background: url("../assets/plus-icon.png") center/cover no-repeat;
 }
-.main__category .categoria .carousel__container .carousel-item__details .title {
+.main__category .categoria__carousel .carousel__container .carousel-item__details .title {
   font-size: 1.6rem;
   margin: 3px 0;
 }
-.main__category .categoria .carousel__container .carousel-item__details .subtitle {
+.main__category .categoria__carousel .carousel__container .carousel-item__details .subtitle {
   font-size: 1rem;
 }
 .main__category .categoria__buttons {
@@ -112,7 +111,7 @@
 }
 .main__category .categoria__buttons .categoria__button {
   position: absolute;
-  bottom: 70px;
+  top: 73px;
   width: 50px;
   height: 250px;
   cursor: pointer;
@@ -127,7 +126,7 @@
   right: 0;
 }
 .main .moveLeft {
-  transform: translateX(-100px);
+  transform: translateX(-60px);
 }
 
 /*# sourceMappingURL=main.css.map */

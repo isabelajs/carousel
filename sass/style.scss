@@ -16,3 +16,14 @@ html{
     color: white;
     font-family: 'Muli', sans-serif;
 }
+
+@media (max-width:425px){
+    .main__category{
+        .categoria{
+            .categoria__buttons{
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    }
+}

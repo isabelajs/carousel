@@ -26,13 +26,15 @@
   margin: 0 15px;
   position: relative;
 }
+.main__category .categoria {
+  position: relative;
+}
 .main__category .categoria__title {
   font-size: 2rem;
 }
 .main__category .categoria__carousel {
   overflow-x: scroll;
   padding: 50px 0px;
-  position: relative;
   scroll-behavior: smooth;
   display: flex;
   flex-direction: column;
@@ -105,6 +107,9 @@
 }
 .main__category .categoria__carousel .carousel__container .carousel-item__details .subtitle {
   font-size: 1rem;
+}
+.main__category .categoria__carousel::-webkit-scrollbar {
+  display: none;
 }
 .main__category .categoria__buttons {
   display: flex;

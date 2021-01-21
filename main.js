@@ -1,44 +1,53 @@
 
-//obtiene le contenedor del carrusel
-let carousel_contenedor = document.getElementsByClassName("categoria__carousel")[0];
-//obtiene el ultimo elemento del carrusel
-let lastItem= carousel_contenedor.lastChild.previousSibling.lastChild.previousSibling
+//obtengo el conjunto de los elementos que contienen el carrusel
+let carousel_contenedor = [...document.getElementsByClassName("categoria__carousel")];
 
-//obtengo los botones derecha e izquierda
-let btnLeft = document.getElementById("btn-left")
-let btnRight = document.getElementById("btn-right")
+//obtengo los botones de derecha a izquierda
+let buttonsLeft =[...document.getElementsByClassName("categoria__button-left")] ;
+let buttonsRight = [...document.getElementsByClassName("categoria__button-right")];
 
-//obtengo todos los hermanos del ultimo elemento
-let itemsWithoutLastItem = getSiblings(lastItem)
+//extrae cada carousel 
+carousel_contenedor.forEach(carousel => {
+    //obtiene el ultimo elemento del carrusel
+    let lastItem = carousel.lastChild.previousSibling.lastChild.previousSibling
+    //obtengo todos los hermanos del ultimo elemento
+    let itemsWithoutLastItem = getSiblings(lastItem)
+    //agrega la función al evento posicionar o desposicionar en el ultimo elemento
+    lastItem.addEventListener("mouseover", ()=>{desplazarItems(itemsWithoutLastItem)} )
+    lastItem.addEventListener("mouseout", ()=>{desplazarItems(itemsWithoutLastItem)})
 
-lastItem.addEventListener("mouseover", desplazar)
-lastItem.addEventListener("mouseout",desplazar)
+});
 
-btnLeft.addEventListener("click",moveRight)
-btnRight.addEventListener("click",moveLeft)
+//todos los botones a la izquierda
+buttonsLeft.forEach(buttonLeft =>{
+    buttonLeft.addEventListener("click",()=>{moveLeft(buttonLeft)})
+})
 
+//todos los botones a la derecha
+buttonsRight.forEach(buttonRight => {
+    buttonRight.addEventListener("click",()=>{moveRight(buttonRight)})
+})
 
-
-//mueve a la derecha con el boton derecho
-function moveRight(){
-    console.log("estamos moviendo a la izquierd ajaja")
+//mueve a la izquieda
+function moveLeft(element){
+    let carousel_contenedor = element.parentNode.previousSibling.previousSibling;
     carousel_contenedor.scrollLeft -=200;
 }
-//mueve a la derecha con el boton izquierdo
-function moveLeft(){
-    console.log("estamos moviendo a  la derechaa ajja")
-    carousel_contenedor.scrollLeft +=200;
-}
-//desplaza el ultimo elemento del contenedor carrusel al agregarle una clase
-function desplazar(){
 
-    itemsWithoutLastItem.forEach((item)=>{
+//mueve a la derecha
+function moveRight(element){
+    let carousel_contenedorx = element.parentNode.previousSibling.previousSibling;
+    carousel_contenedorx.scrollLeft +=200;
+}
+
+//desplaza el ultimo elemento del contenedor carrusel al agregarle una clase
+function desplazarItems(siblings){
+    siblings.forEach((item)=>{
 
         item.classList.toggle("moveLeft")
-
     })
-
 }
+
 //obtiene todos los hermanos
 function getSiblings(e) {
     // for collecting siblings
@@ -59,7 +68,3 @@ function getSiblings(e) {
     }
     return siblings;
 };
-
-
-
-

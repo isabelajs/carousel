@@ -31,13 +31,13 @@ buttonsRight.forEach(buttonRight => {
 //mueve a la izquieda
 function moveLeft(element){
     let carousel_contenedor = element.parentNode.previousSibling.previousSibling;
-    carousel_contenedor.scrollLeft -=200;
+    carousel_contenedor.scrollLeft -=400;
 }
 
 //mueve a la derecha
 function moveRight(element){
     let carousel_contenedorx = element.parentNode.previousSibling.previousSibling;
-    carousel_contenedorx.scrollLeft +=200;
+    carousel_contenedorx.scrollLeft +=400;
 }
 
 //desplaza el ultimo elemento del contenedor carrusel al agregarle una clase

@@ -1,4 +1,4 @@
-# Carusel
+# Carousel
 
 Diseño de página con carrusel de imagenes
 
